@@ -1,0 +1,291 @@
+@font-face {
+    font-family: 'SF';
+    src: url('Fonts/transfonter.org-20240909-191620/SFProDisplay-Regular.woff2') format('woff2'),
+        url('fonts/transfonter.org-20240909-191620/SFProDisplay-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'SF';
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    background: url(img/fondo.png) center center/cover;
+    
+}
+.pizza {
+    background: linear-gradient(90deg, green 10%,  white 60%, red 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold; /* Opcional: resalta el texto  */
+}
+
+
+h1{
+    color: #313131;
+    letter-spacing: 1px;
+    font-weight: 700;
+    font-size: 3rem;
+}
+
+li{
+    color: #000000d5;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+#contenedor{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    overflow: hidden;
+    width: 70vh;
+    max-width: 70vh;
+    border-radius: 18%;
+    z-index: 1;
+    box-shadow: inset 0px 0px 200px rgba(255, 255, 255),0px 0px 80px rgba(255, 255, 255);
+    border: none;
+}
+#contenedor::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(5px); 
+    z-index: -1; 
+}
+
+.topping{
+   font-size: 1.80rem;
+   list-style: none;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   height: 70px;
+   margin: 10px 0;
+   padding: 0 10px;
+}
+
+
+
+
+
+/* ============ ADAPTACION ============== */
+/* ======== Aceituna ===================== */
+.aceituna{
+    width: 50px;
+    height: 50px;
+    background: #0071e3;
+    border-radius: 50%;
+    position: relative;
+    transition: all .3s;
+    color: transparent;
+    animation-direction: alternate;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+.img-aceituna, .img-cebolla, .img-albahaca, .img-champinon{
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    font-size: 2rem;
+    color: black;
+    transition: all 1ms;
+  }
+  .img-aceituna:hover, .img-cebolla:hover, 
+  .img-albahaca:hover, .img-champinon:hover{
+    color: transparent;
+    transition: all 100ms;
+    opacity: 0;
+    width: 100%;
+    height: 150%;
+  }
+  
+  .aceituna:hover, .cebolla:hover, 
+  .albahaca:hover, .champinon:hover{
+    width: 150px;
+    border-radius: 10px;
+    color: black;
+  }
+  .aceituna::before{
+    content: 'Aceituna';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 12px;
+   text-align: center;
+    left: 0;
+    padding: 3px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.15rem;
+    font-weight: 600;
+  }
+  .aceituna.clicked {
+    background-color: #0071e3;
+    width: 200px;
+    border-radius: 10px;
+    color: black; /* El texto es transparente en estado clickeado */
+  }
+  
+  /* Hacer el icono transparente cuando se hace clic */
+  .aceituna.clicked img {
+    color: transparent;
+    transition: all 100ms;
+    opacity: 0;
+    width: 100%;
+    height: 150%; /* Icono transparente en estado clickeado */
+  }
+
+  /* ======== Cebolla ===================== */
+   .cebolla{
+    width: 50px;
+    height: 50px;
+    background: #ec3333;
+    border-radius: 50%;
+    position: relative;
+    transition: all .3s;
+    color: transparent;
+    animation-direction: alternate;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+ .cebolla::before{
+    content: 'Cebolla';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 12px;
+   text-align: center;
+    left: 0;
+    padding: 3px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.15rem;
+    font-weight: 600;
+  }
+
+  .cebolla.clicked {
+    background-color: #ec3333;
+    width: 200px;
+    border-radius: 10px;
+    color: black; /* El texto es transparente en estado clickeado */
+  }
+  
+  /* Hacer el icono transparente cuando se hace clic */
+  .cebolla.clicked img {
+    color: transparent;
+    transition: all 100ms;
+    opacity: 0;
+    width: 100%;
+    height: 150%; /* Icono transparente en estado clickeado */
+  }
+
+  /* ================= Albahaca ============== */
+  .albahaca{
+    width: 50px;
+    height: 50px;
+    background: hsl(93, 54%, 54%);
+    border-radius: 50%;
+    position: relative;
+    transition: all .3s;
+    color: transparent;
+    animation-direction: alternate;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .albahaca::before{
+    content: 'Albahaca';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 12px;
+   text-align: center;
+    left: 0;
+    padding: 3px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.15rem;
+    font-weight: 600;
+  }
+
+  .albahaca.clicked {
+    background-color: hsl(93, 54%, 54%);
+    width: 200px;
+    border-radius: 10px;
+    color: black; /* El texto es transparente en estado clickeado */
+  }
+  
+  /* Hacer el icono transparente cuando se hace clic */
+  .albahaca.clicked img {
+    color: transparent;
+    transition: all 100ms;
+    opacity: 0;
+    width: 100%;
+    height: 150%; /* Icono transparente en estado clickeado */
+  }
+
+  /* ================= Champiñon ================= */
+  .champinon{
+    width: 50px;
+    height: 50px;
+    background: #ecb133;
+    border-radius: 50%;
+    position: relative;
+    transition: all .3s;
+    color: transparent;
+    animation-direction: alternate;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .champinon::before{
+    content: 'Champiñon';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 12px;
+   text-align: center;
+    left: 0;
+    padding: 3px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.15rem;
+    font-weight: 600;
+  }
+  .champinon.clicked {
+    background-color: #ecb133;
+    width: 200px;
+    border-radius: 10px;
+    color: black; /* El texto es transparente en estado clickeado */
+  }
+  
+  /* Hacer el icono transparente cuando se hace clic */
+  .champinon.clicked img {
+    color: transparent;
+    transition: all 100ms;
+    opacity: 0;
+    width: 100%;
+    height: 150%; /* Icono transparente en estado clickeado */
+  }
+
+
+/* Estilo cuando se hace clic */
